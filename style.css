@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+  --bg: #090d17;
+  --panel: #111827;
+  --panel-soft: #182236;
+  --accent: #5dd6ff;
+  --text: #dce7ff;
+  --muted: #9bb1d7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #101c33, var(--bg) 45%);
+  color: var(--text);
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.controls {
+  background: linear-gradient(160deg, rgba(16, 23, 40, 0.95), rgba(8, 13, 25, 0.92));
+  border-right: 1px solid rgba(170, 200, 255, 0.18);
+  padding: 1rem 1.2rem;
+}
+
+.controls h1 {
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+.control-group {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  padding: 0.9rem;
+  background: var(--panel);
+  border: 1px solid rgba(150, 180, 240, 0.12);
+  border-radius: 12px;
+}
+
+label {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.viewport {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+#gl-canvas {
+  width: min(100%, 1200px);
+  height: min(96vh, 860px);
+  border-radius: 16px;
+  border: 1px solid rgba(165, 194, 255, 0.2);
+  background: radial-gradient(circle at 50% 20%, #1d2f4e 10%, #0b1120 70%);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.38);
+}
+
+.info-panel {
+  position: absolute;
+  right: 2.2rem;
+  top: 2.2rem;
+  width: 300px;
+  background: rgba(12, 18, 30, 0.86);
+  border: 1px solid rgba(143, 188, 255, 0.35);
+  border-radius: 12px;
+  padding: 0.95rem;
+  backdrop-filter: blur(6px);
+}
+
+.info-panel h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.info-panel p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.9rem;
+}
