@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic 2D Human Anatomy Visualizer (WebGL)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="controls">
+        <h1>Human Anatomy Visualizer</h1>
+        <div class="control-group">
+          <label><input id="toggle-circulatory" type="checkbox" checked /> Circulatory</label>
+          <label><input id="toggle-respiratory" type="checkbox" checked /> Respiratory</label>
+          <label><input id="toggle-nervous" type="checkbox" checked /> Nervous</label>
+        </div>
+
+        <div class="control-group">
+          <label for="heart-rate">Heart Rate <span id="heart-rate-value">72</span> BPM</label>
+          <input id="heart-rate" type="range" min="40" max="160" value="72" />
+        </div>
+
+        <div class="control-group">
+          <label for="breath-rate">Breathing Rate <span id="breath-rate-value">14</span> BPM</label>
+          <input id="breath-rate" type="range" min="6" max="30" value="14" />
+        </div>
+
+        <div class="control-group">
+          <p class="hint">Mouse wheel: Zoom · Drag background: Pan · Hover organs: Glow · Click organ: Info panel</p>
+        </div>
+      </aside>
+
+      <main class="viewport">
+        <canvas id="gl-canvas" width="1200" height="860"></canvas>
+        <section id="info-panel" class="info-panel">
+          <h2 id="organ-name">Select an organ</h2>
+          <p id="organ-function">Function details will appear here.</p>
+          <p id="organ-description"></p>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
